@@ -10,8 +10,10 @@ https://blog.matrix.pro/bootstrap-5-vs-tailwind-css/
 
 - Setup your environment w/ local domain, etc.
 - Update your .env with database creds and local domain
-- Run the following commands in your terminal:
--- composer install
--- npm install
--- php artisan migrate --seed
--- npm run dev
+
+Run the following commands in your terminal:
+
+- composer install
+- npm install
+- php artisan migrate --seed
+- npm run dev
