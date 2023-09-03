@@ -3,6 +3,7 @@
 namespace App\Models\Traits;
 
 use App\Models\Country;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait HasCountry
@@ -12,17 +13,15 @@ trait HasCountry
         return $this->belongsTo(Country::class);
     }
 
-    public function getCountryCodeAttribute(): ?string
+    protected function countryCode(): Attribute
     {
-        return optional($this->country)->code;
-    }
-
-    public function setCountryCodeAttribute(string $code): void
-    {
-        if (! $country = Country::where('code', $code)->first()) {
-            return;
-        }
-
-        $this->country = $country;
+        return Attribute::make(
+            get: fn(): ?string => $this->country?->code,
+            // set: function(string $code): void {
+            //     if ($country = Country::where('code', $code)->first()) {
+            //         $this->country()->associate($country);
+            //     }
+            // }
+        );
     }
 }

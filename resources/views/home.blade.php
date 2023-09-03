@@ -22,7 +22,7 @@
             <div class="col-lg-3">
                 <select class="form-select filter_select mb-2">
                     <option value="filter_location-reset">Location</option>
-                    @foreach ($locations_select as $key => $location)
+                    @foreach ($locations as $key => $location)
                     <option value="filter_location-{{ $key }}" {{ $key == cache('filter_location') ? 'selected' : '' }}>{{ $location }}</option>
                     @endforeach
                 </select>

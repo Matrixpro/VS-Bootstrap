@@ -25,16 +25,7 @@ class DatabaseSeeder extends Seeder
 
         Community::factory()
             ->count(15)
-            ->create()
-        ->each(function (Community $community) {
-            Location::factory()
-                ->state(new Sequence(fn ($sequence) => ['community_id' => $community->getKey()]))
-                ->create();
-        });
-
-//        Location::factory()
-//            ->state(new Sequence(fn ($sequence) => ['state_id' => State::query()->whereIn('code', ['TX', 'NM', 'CO', 'IL'])->get()->random()->id]))
-//            ->count(15)
-//            ->create();
+            ->has(Location::factory())
+            ->create();
     }
 }

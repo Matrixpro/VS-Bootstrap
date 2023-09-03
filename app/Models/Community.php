@@ -16,12 +16,7 @@ class Community extends Model
         return $this->hasOne(Location::class);
     }
 
-    /**
-     * Get/format the price min
-     *
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function priceMin(): Attribute
+     protected function priceMin(): Attribute
     {
         return Attribute::make(
             get: fn ($value) => number_format($value),

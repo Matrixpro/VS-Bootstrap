@@ -9,7 +9,6 @@
                     <div class="card-body">
                         <h4 class="card-title fw-semibold border-bottom">{{ $community->name }}</h4>
 
-
                         <div class="row mt-3">
                                 <div class="col-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
